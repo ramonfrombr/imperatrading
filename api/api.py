@@ -1,8 +1,8 @@
 import time
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route('/time')
-def selecionar_horario_atial():
-    return {'horario': time.time()}
+@app.route('/horario')
+def selecionar_horario_atual():
+    return jsonify({'horario': time.time()})

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Logo from "../../logo1.png";
 
@@ -8,6 +8,7 @@ import {
 	FaTwitter,
 	FaYoutube,
 	FaLinkedin,
+	FaClock,
 } from "react-icons/fa";
 
 import { IconContext } from "react-icons/lib";
@@ -31,13 +32,50 @@ import {
 } from "./RodapeElementos";
 
 const Rodape = () => {
+	const [horarioAtual, definirHorarioAtual] = useState(0);
+
 	const toggleInicio = () => {
 		scroll.scrollToTop();
 	};
 
+	useEffect(() => {
+		fetch("/horario")
+			.then((resposta) => resposta.json())
+			.then((dados) => {
+				var date = new Date(dados.horario * 1000);
+				// Hours part from the timestamp
+				var hours = date.getHours();
+				// Minutes part from the timestamp
+				var minutes = "0" + date.getMinutes();
+				// Seconds part from the timestamp
+				var seconds = "0" + date.getSeconds();
+
+				// Will display time in 10:30:23 format
+				var formattedTime =
+					hours + ":" + minutes.substr(-2) + ":" + seconds.substr(-2);
+
+				console.log(formattedTime);
+				definirHorarioAtual(formattedTime);
+			});
+	}, []);
+
 	return (
 		<IconContext.Provider value={{ color: "#fff" }}>
 			<RodapeContainer>
+				<p
+					style={{
+						color: "#fff",
+						textAlign: "center",
+						paddingTop: "20px",
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+					}}
+				>
+					<FaClock />
+					&nbsp;
+					{horarioAtual}
+				</p>
 				<RodapeWrap>
 					<RodapeLinksContainer>
 						<RodapeLinksWrap>
