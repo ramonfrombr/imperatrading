@@ -10,6 +10,8 @@ import {
 	inicioObjTres,
 } from "../componentes/Info/Dados";
 
+import "../index.css";
+
 import Servicos from "../componentes/Servicos/Servicos";
 import Rodape from "../componentes/Rodape/Rodape";
 

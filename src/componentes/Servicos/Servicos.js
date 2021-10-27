@@ -25,7 +25,8 @@ const Servicos = () => {
 					<ServicosIcone src={Icone1} />
 					<ServicosH2>Robôs de Operações Automatizadas</ServicosH2>
 					<ServicosP>
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+						Invista em opções binárias, forex e criptomoedas com robôs
+						inteligentes.
 					</ServicosP>
 					<Botao>Clique e Conheça mais</Botao>
 				</ServicosCartao>
@@ -34,7 +35,8 @@ const Servicos = () => {
 					<ServicosIcone src={Icone2} />
 					<ServicosH2>Supervisionamento das Operações</ServicosH2>
 					<ServicosP>
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+						Deixe que supervisionamos as operações de seu capital para otimizar
+						seu tempo e maximizar os ganhos.
 					</ServicosP>
 					<Botao>Clique e Conheça mais</Botao>
 				</ServicosCartao>
@@ -43,7 +45,7 @@ const Servicos = () => {
 					<ServicosIcone src={Icone3} />
 					<ServicosH2>Treinamentos e Cursos</ServicosH2>
 					<ServicosP>
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+						Aprenda a teoria e a prática em diferentes tipos de investimentos.
 					</ServicosP>
 					<Botao>Clique e Conheça mais</Botao>
 				</ServicosCartao>

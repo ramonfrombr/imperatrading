@@ -32,50 +32,13 @@ import {
 } from "./RodapeElementos";
 
 const Rodape = () => {
-	const [horarioAtual, definirHorarioAtual] = useState(0);
-
 	const toggleInicio = () => {
 		scroll.scrollToTop();
 	};
 
-	useEffect(() => {
-		fetch("/horario")
-			.then((resposta) => resposta.json())
-			.then((dados) => {
-				var date = new Date(dados.horario * 1000);
-				// Hours part from the timestamp
-				var hours = date.getHours();
-				// Minutes part from the timestamp
-				var minutes = "0" + date.getMinutes();
-				// Seconds part from the timestamp
-				var seconds = "0" + date.getSeconds();
-
-				// Will display time in 10:30:23 format
-				var formattedTime =
-					hours + ":" + minutes.substr(-2) + ":" + seconds.substr(-2);
-
-				console.log(formattedTime);
-				definirHorarioAtual(formattedTime);
-			});
-	}, []);
-
 	return (
 		<IconContext.Provider value={{ color: "#fff" }}>
 			<RodapeContainer>
-				<p
-					style={{
-						color: "#fff",
-						textAlign: "center",
-						paddingTop: "20px",
-						display: "flex",
-						alignItems: "center",
-						justifyContent: "center",
-					}}
-				>
-					<FaClock />
-					&nbsp;
-					{horarioAtual}
-				</p>
 				<RodapeWrap>
 					<RodapeLinksContainer>
 						<RodapeLinksWrap>
@@ -89,13 +52,13 @@ const Rodape = () => {
 							</RodapeLinkItems>
 
 							<RodapeLinkItems>
-								<RodapeLinkTitulo>Videos</RodapeLinkTitulo>
+								<RodapeLinkTitulo>Serviços e Produtos</RodapeLinkTitulo>
 
-								<RodapeLink to="/entrar">Como funciona</RodapeLink>
-								<RodapeLink to="/entrar">Perguntas Frequentes</RodapeLink>
-								<RodapeLink to="/entrar">Referências</RodapeLink>
-
-								<RodapeLink to="/entrar">Termos de Serviço</RodapeLink>
+								<RodapeLink to="/entrar">Robôs Automatizados</RodapeLink>
+								<RodapeLink to="/entrar">
+									Surpevisionamento das Operações
+								</RodapeLink>
+								<RodapeLink to="/entrar">Treinamentos e Cursos</RodapeLink>
 							</RodapeLinkItems>
 						</RodapeLinksWrap>
 						<RodapeLinksWrap>
